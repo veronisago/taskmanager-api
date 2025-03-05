@@ -37,23 +37,25 @@ This project is a backend API built with Node.js, Express, and MongoDB for a Tas
 
 ## Project Structure
 
-/ (project root)
-├── src
-│   ├── controllers
-│   │   ├── authController.ts // Handles registration and login logic
-│   │   └── taskController.ts // Handles task CRUD operations
-│   ├── middleware
-│   │   └── authMiddleware.ts // Middleware for protecting routes
-│   ├── models
-│   │   ├── Task.ts // Mongoose model for tasks
-│   │   └── User.ts // Mongoose model for users
-│   ├── routes
-│   │   ├── authRoutes.ts // Routes for authentication endpoints
-│   │   └── taskRoutes.ts // Routes for task endpoints
-│   └── server.ts // Express application setup and server start
-├── .env // Environment variable configuration file
-├── package.json // Project metadata and dependencies
-└── README.md // Project documentation (this file)
+The backend follows the Model-View-Controller (MVC) architecture, which promotes separation of concerns and enhances scalability and maintainability.
+
+🔹 Model-View-Controller (MVC)
+The backend is structured into three key layers:
+
+**Model (M)**
+
+Handles data structure and interactions with MongoDB via Mongoose.
+Defines schemas for entities like User and Task.
+
+**Controller (C)**
+
+Contains business logic and processes incoming requests.
+Handles authentication, task management, and database interactions.
+
+**Routes (View Equivalent)**
+
+Defines API endpoints and connects them with the respective controllers.
+Uses Express.js for handling HTTP requests.
 
 
 ## 🏗️ **Installation and Configuration**
