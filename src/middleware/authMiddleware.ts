@@ -8,18 +8,17 @@ interface AuthRequest extends Request {
 const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction): void => {
   const authHeader = req.header('Authorization');
 
-  console.log('Header Authorization:', authHeader);
+  // console.log('Header Authorization:', authHeader);
 
   if (!authHeader) {
-    res.status(401).json({ message: 'Acceso denegado, no hay token' });
+    res.status(401).json({ message: 'Access denied, no token' });
     return;
   }
 
-  // Extraer el token eliminando el prefijo "Bearer "
   const token = authHeader.split(' ')[1];
 
   if (!token) {
-    res.status(401).json({ message: 'Token inválido o mal formado' });
+    res.status(401).json({ message: 'Invalid token' });
     return;
   }
 
@@ -28,8 +27,8 @@ const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction): vo
     req.user = { id: decoded.id };
     next();
   } catch (error) {
-    console.error('Error verificando el token:', error);
-    res.status(401).json({ message: 'Token inválido o expirado' });
+    console.error('Error verifying token:', error);
+    res.status(401).json({ message: 'Invalid or expired token' });
   }
 };
 

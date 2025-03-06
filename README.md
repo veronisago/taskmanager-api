@@ -62,8 +62,8 @@ Uses Express.js for handling HTTP requests.
 
 ### **1️⃣ Clone the repository**
 ```sh
-git clone https://github.com/your_username/your_repository.git
-cd your_repository
+git clone https://github.com/veronisago/taskmanager-api.git
+cd taskmanager-api
 ```
 
 ### **2️⃣ Install dependencies**
@@ -174,16 +174,6 @@ The server will start at `http://localhost:5000`.
 { "message": "Task deleted" }
 ```
 
-## 🌍 **Environment Variables**
-Ensure you have a `.env` file with the following variables configured:
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-```
-
----
-
 ## 🔮 **Future Improvements**
 ### **Better Error Handling**
 ✔️ Improve error responses and logging for better debugging and feedback.
@@ -193,9 +183,4 @@ JWT_SECRET=your_jwt_secret_key
 
 ### **Automated Testing**
 ✔️ Add unit and integration tests to ensure API reliability.
-
-### **Interactive API Documentation**
-✔️ Integrate Swagger for interactive API documentation.
-
-🚀 **Ready to improve and scale!**
 
