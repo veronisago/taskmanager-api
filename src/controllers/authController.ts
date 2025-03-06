@@ -32,13 +32,13 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const user = await User.findOne({ email });
     if (!user) {
-      res.status(400).json({ message: 'Credenciales incorrectas' });
+      res.status(400).json({ message: 'Incorrect credentials' });
       return;
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      res.status(400).json({ message: 'Credenciales incorrectas' });
+      res.status(400).json({ message: 'Incorrect credentials' });
       return;
     }
 
@@ -46,6 +46,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     res.status(200).json({ token, user: { id: user._id, name: user.name, email } });
   } catch (error) {
-    res.status(500).json({ message: 'Error en el servidor' });
+    res.status(500).json({ message: 'Server error' });
   }
 };
